@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Shadow">
+
+    <com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:elevation="10dp"
+            android:src="@drawable/click" />
+
+    </com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper>
+
+    <com.sdsmdg.harjot.longshadows.LongShadowsWrapper
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5362C">
+
+        <com.sdsmdg.harjot.longshadows.LongShadowsTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alfa_slab_one"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:text="Hello World" />
+
+    </com.sdsmdg.harjot.longshadows.LongShadowsWrapper>
+
+</LinearLayout>
