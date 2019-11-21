@@ -127,8 +127,9 @@ public class MainActivity extends AppCompatActivity {
 
         p = bmap.getPixel(0, 1);
         alpha = Color.alpha(p);
-        r = length;
-        g = Color.green(p);
+        r = length%255;
+        g = length/255;
+        int check = r+255*g;
         b = Color.blue(p);
         operation.setPixel(0, 1, Color.argb(alpha, r, g, b));
 //        Toast.makeText(MainActivity.this, "Length is : "+Color.alpha(operation.getPixel(0, 1)), Toast.LENGTH_SHORT).show();
@@ -154,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
             operation.setPixel(counterX, counterY, Color.argb(alpha, r, g, b));
             counterY++;
         }
-
+//        displaytext.setText("Width : "+width+"\nCounterX : "+counterX+"\nCounterY : "+counterY+"\nr : "+Color.red(operation.getPixel(0, 1))+"\ng : "+Color.green(operation.getPixel(0, 1))+"\nr : "+Color.blue(operation.getPixel(0, 1))+"\nLength : "+length+"\nr : "+check);
         imagelay.setImageBitmap(operation);
         mainImg = operation.copy(operation.getConfig(), true);
         Toast.makeText(MainActivity.this, "Message Encoded", Toast.LENGTH_SHORT).show();
@@ -176,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         String msg = "";
 
         if(r == 89 && g == 69 && b == 83){
-            int length = Color.red(bmap.getPixel(0, 1));
+            int length = Color.red(bmap.getPixel(0, 1))+255*Color.green(bmap.getPixel(0, 1));
             int counterX = 1;
             int counterY = 0;
             int width = bmap.getWidth();
